@@ -1,77 +1,50 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>mfylee/Tangram-more @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #192e85;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #e6d17a; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #e6d17a; }
-    h3 { text-align: center; color: #e6d17a; }
-    a { color: #e6d17a; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <title>Noah运维平台</title>
+  <script src="tangram1.3.9.js" type="text/javascript" charset="utf-8"></script>
+    <script src="util.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ajaxform.js" type="text/javascript" charset="utf-8"></script>
 </head>
-
 <body>
-  <a href="http://github.com/mfylee/Tangram-more"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/mfylee/Tangram-more/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/mfylee/Tangram-more/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/mfylee/Tangram-more">Tangram-more</a>
-      <span class="small">by <a href="http://github.com/mfylee">mfylee</a></span></h1>
-
-    <div class="description">
-      基于Tangram的扩展，插件，第三方代码
-    </div>
-
-    <h2>Authors</h2>
-<p>berg (cnberg@gmail.com)<br/>xuyizhi (xuyizhi@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (lepharye@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/mfylee/Tangram-more/zipball/master">zip</a> or
-      <a href="http://github.com/mfylee/Tangram-more/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/mfylee/Tangram-more</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/mfylee/Tangram-more">mfylee/Tangram-more</a>
-    </div>
-
-  </div>
-
-  
+<input type="file" name="file3"/>
+	<form name="form" id="form" action="http://www.baidu.com">
+		<input type="text" name="age" />
+		1<input type="checkbox" name="cls" value="1"/>
+		2<input type="checkbox" name="cls" value="2"/>
+		3<input type="checkbox" name="cls" value="3"/>
+		<select name="type">	
+			<option value="xx">dsfs</option>
+			<option value="xdfx">ddfsdsfs</option>
+		</select>
+		<input type="file" name="file"/>
+        <input type="submit"  value="submit"/>
+		<input type="button" value="提交" id="btnSubmit"/>
+		<input type="button" value="重置" id="btnReset"/>
+	</form>
+<input type="file" name="file2"/>
+<script>
+/*
+T.event.on("btnSubmit","click",function(){
+	T.element("#form").ajaxSubmit({
+        url:"xxx.do",
+		onfailure:function(xhr){
+            log(xhr.responseText);
+		}
+	});
+});
+*/
+T.element("#form").ajaxForm({
+    url:"xxx.do",
+    onfailure:function(xhr){
+        log(xhr.responseText);
+    }
+});
+T.event.on("btnReset","click",function(){
+	T.element("#form").clearForm();
+});
+</script>
 </body>
 </html>
